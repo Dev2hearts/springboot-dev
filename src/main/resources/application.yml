@@ -6,4 +6,4 @@ spring:
       hibernate:
         format_sql: true
 
-    defer-datesource-initialization: true
+    defer-datasource-initialization: true

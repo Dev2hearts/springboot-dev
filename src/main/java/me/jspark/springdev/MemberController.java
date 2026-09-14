@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class TestController {
+public class MemberController {
+    // 요청을 받아서 적절한 비즈니스로직으로 연결
     @Autowired
-    TestService testService;
-    @GetMapping("/test")
+    MemberService memberService;
+    @GetMapping("/member")
     public List<Member> getAllMember(){
-        List<Member> members = testService.getAllMembers();
-        return members;
+        return memberService.getAllMembers();
     }
 }

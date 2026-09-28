@@ -14,4 +14,7 @@ public class MemberService {
     public List<Member> getAllMembers(){
         return memberRepository.findAll();
     }
+    public Member saveMember(Member member){
+        return memberRepository.save(member); // save 메서드는 insert 또는 update를 함. update를 하는 기준은 pk 값이 있을 경우 update
+    }
 }

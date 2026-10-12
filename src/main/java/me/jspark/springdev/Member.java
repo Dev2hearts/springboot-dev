@@ -23,4 +23,8 @@ public class Member {
     private Long id;
     @Column(name = "name", nullable = false)
     private String name;
+
+    public Member(String name) {
+        this.name = name;
+    }
 }

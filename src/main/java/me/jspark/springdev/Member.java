@@ -1,10 +1,7 @@
 package me.jspark.springdev;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 //기본 생성자 자동 생성
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -22,9 +19,14 @@ public class Member {
     @Column(name = "id", updatable = false)
     private Long id;
     @Column(name = "name", nullable = false)
+    @Setter(AccessLevel.PUBLIC)
     private String name;
 
     public Member(String name) {
+        this.name = name;
+    }
+
+    public void changeName(String name){
         this.name = name;
     }
 }

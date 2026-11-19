@@ -1,9 +1,18 @@
 
 spring:
+  datasource: #메모리에 임시 DB 생성
+    url: jdbc:h2:mem:testdb
+  h2: # 브라우저로 DB를 직접 볼 수 있게 함.
+    console:
+      enabled: true
+      path: /h2-console
+
   jpa:
+    # 전송 쿼리 확인
     show-sql: true
     properties:
       hibernate:
-        format_sql: true
+        format_sql: true # SQL을 줄 바꿈해서 보기 좋게 출력
 
+    #테이블 생성 후 data.sql 실행. (이 설정이 없으면 테이블 생성 전 data.sql 실행을 먼저함)
     defer-datasource-initialization: true
